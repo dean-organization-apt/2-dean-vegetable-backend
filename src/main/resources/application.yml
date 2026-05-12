@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    # Cambia 'nombre_de_tu_db' por el que creaste en MySQL Workbench
+    url: jdbc:mysql://localhost:3306/vegetables?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 1234567
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      # 'update' sincroniza tus clases Java con las tablas de MySQL
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
