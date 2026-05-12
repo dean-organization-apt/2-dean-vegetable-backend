@@ -42,6 +42,54 @@ public class Product implements Serializable{
 	@JoinColumn(name="admin_idadmin")
 	private Admin admin;
 
+	public Integer getIdproduct() {
+		return idproduct;
+	}
+
+	public void setIdproduct(Integer idproduct) {
+		this.idproduct = idproduct;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public Admin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
+	}
+
 	
 
 }
