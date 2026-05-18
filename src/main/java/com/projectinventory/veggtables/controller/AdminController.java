@@ -34,9 +34,9 @@ public class AdminController {
 	}
 
 	@GetMapping("/listar")
-	public List<Admin> listar() {
+	public List<AdminDTO> listar() {
 
-		return as.listarTodos();
+		return  as.listarTodos();
 	}
 
 	@PutMapping("/actualizar/{id}")

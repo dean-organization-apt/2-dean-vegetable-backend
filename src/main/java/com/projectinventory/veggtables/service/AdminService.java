@@ -33,9 +33,20 @@ public class AdminService {
 		
 	}
 	
-	public List<Admin> listarTodos(){
-		return ar.findAll();
-		
+	public List<AdminDTO> listarTodos() {
+	    // 1. Traemos las entidades desde el repositorio (SELECT * FROM admin)
+	    List<Admin> entidades = ar.findAll();
+	    
+	    // 2. Convertimos la lista de entidades en una lista de DTOs
+	    return entidades.stream().map(admin -> {
+	        AdminDTO dto = new AdminDTO();
+	        dto.setIdadmin(admin.getIdadmin());
+	        dto.setUser(admin.getUser());
+	        dto.setPassword(admin.getPassword()); // Podrías omitirla por seguridad
+	        dto.setEmail(admin.getEmail());
+	        dto.setStatus(admin.getStatus());
+	        return dto;
+	    }).toList(); // Convertimos el flujo de vuelta a una lista
 	}
 	
 	public void desactivar(Integer id) {
@@ -68,6 +79,7 @@ public class AdminService {
 			
 			
 			return ar.save(adminExistente);
+			
 			
 		}
 		

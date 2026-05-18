@@ -2,12 +2,19 @@ package com.projectinventory.veggtables.dto;
 
 public class AdminDTO {
 	
+	private Integer idadmin;
 	private String user;
 	private String password;
 	private String email;
 	private Boolean status;
 	
 	
+	public Integer getIdadmin() {
+		return idadmin;
+	}
+	public void setIdadmin(Integer idadmin) {
+		this.idadmin = idadmin;
+	}
 	public Boolean getStatus() {
 		return status;
 	}
